@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer|Raleway|Vidaloka&display=swap");
+body {
+  font-family: "Raleway";
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+  max-height: 50vh;
+  max-width: 100%;
+}
+
+blockquote {
+  text-align: center;
+  font-family: "Vidaloka";
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 2em;
+}
+
+blockquote::before {
+  font-family: "IM Fell Great Primer", serif;
+  text-align: center;
+  content: '"';
+  font-size: 6rem;
+}
+
+blockquote::after {
+  font-family: "IM Fell Great Primer", serif;
+  text-align: center;
+  content: '"';
+  font-size: 6rem;
+  position: relative;
+  top: 0.6em;
+}
+
+#button-holder {
+  width: 100%;
+  text-align: center;
+}
