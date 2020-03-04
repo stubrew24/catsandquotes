@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { apiRequest } from './store/actions';
 
 function App() {
+
+  const {catImageUrl, quoteText} = useSelector(state => state)
+  const dispatch = useDispatch()
+
+  const handleClick = () => dispatch(apiRequest())
+
+  useEffect(() => {
+    dispatch(apiRequest())
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Cats + Quotes</h1>
+      <div className="row">
+        <img src={catImageUrl} alt="A cat"/>
+      </div>
+      <blockquote>{quoteText}</blockquote>
+      <button onClick={handleClick}>Gimme more...</button>
     </div>
   );
 }
